@@ -13,9 +13,9 @@ class SplashScreen extends StatelessWidget {
       listener: (context, state) {
         if (state is AppConfigInitialised) {
           if (state.isFirstLaunch) {
-            GoRouter.of(context).replace(mainFlowSceen);
+            GoRouter.of(context).replace(homeRoute);
           } else {
-            GoRouter.of(context).replace(mainFlowSceen);
+            GoRouter.of(context).replace(homeRoute);
           }
         }
       },
