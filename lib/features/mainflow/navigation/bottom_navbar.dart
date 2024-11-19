@@ -20,12 +20,12 @@ class BottomNavBar extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return Container(
       height: 8.0.h,
-      decoration: const BoxDecoration(
-        color: Colors.white,
+      decoration: BoxDecoration(
+        color: colorScheme.surfaceContainer,
         border: Border(
           top: BorderSide(
             width: 0.1,
-            color: Colors.grey,
+            color: colorScheme.onSurface,
           ),
         ),
       ),
@@ -41,7 +41,7 @@ class BottomNavBar extends StatelessWidget {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
               width: currentIndex == index
-                  ? MediaQuery.of(context).size.width / children.length + 20
+                  ? MediaQuery.of(context).size.width / children.length
                   : 50,
               padding: const EdgeInsets.only(left: 10, right: 10),
               margin: const EdgeInsets.only(top: 10, bottom: 10),
