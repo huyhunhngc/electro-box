@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 ThemeData createLightTheme(ColorScheme? colorScheme) {
   return colorScheme != null
-      ? ThemeData(colorScheme: colorScheme, useMaterial3: true)
+      ? ThemeData(
+          colorScheme: colorScheme, useMaterial3: true, fontFamily: 'Quicksand')
       : ThemeData(
           brightness: Brightness.light,
           scaffoldBackgroundColor: AppThemeColors.darkColor,
@@ -14,12 +15,13 @@ ThemeData createLightTheme(ColorScheme? colorScheme) {
           ],
           dialogTheme:
               const DialogTheme(backgroundColor: AppThemeColors.darkColor),
-        );
+          fontFamily: 'Quicksand');
 }
 
 ThemeData createDarkTheme(ColorScheme? colorScheme) {
   return colorScheme != null
-      ? ThemeData(colorScheme: colorScheme, useMaterial3: true)
+      ? ThemeData(
+          colorScheme: colorScheme, useMaterial3: true, fontFamily: 'Quicksand')
       : ThemeData(
           brightness: Brightness.dark,
           scaffoldBackgroundColor: AppThemeColors.darkColor,
@@ -30,7 +32,7 @@ ThemeData createDarkTheme(ColorScheme? colorScheme) {
           dialogTheme: const DialogTheme(
             backgroundColor: AppThemeColors.darkColor,
           ),
-        );
+          fontFamily: 'Quicksand');
 }
 
 class AppThemeColors {

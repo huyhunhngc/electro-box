@@ -19,7 +19,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     return Container(
-      height: 8.0.h,
+      height: 10.0.h,
       decoration: BoxDecoration(
         color: colorScheme.surfaceContainer,
         border: Border(
@@ -43,14 +43,14 @@ class BottomNavBar extends StatelessWidget {
               width: currentIndex == index
                   ? MediaQuery.of(context).size.width / children.length
                   : 50,
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              margin: const EdgeInsets.only(top: 10, bottom: 10),
+              padding: const EdgeInsets.only(left: 12, right: 12),
+              margin: const EdgeInsets.only(top: 24, bottom: 24),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: currentIndex == index
                     ? color.withOpacity(0.2)
                     : Colors.transparent,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(16),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

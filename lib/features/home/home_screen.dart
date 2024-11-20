@@ -1,3 +1,4 @@
+import 'package:circuit_electricial_box/features/home/widgets/rating_widget.dart';
 import 'package:circuit_electricial_box/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
@@ -31,9 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
         foregroundColor: Theme.of(context).colorScheme.onSurface,
         elevation: 0,
       ),
-      body: const Center(
-        child: Text('Home Screen Content'),
-      ),
+      body: SingleChildScrollView(
+          child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [RatingWidget(onRate: (selectedStar) {})],
+        ),
+      )),
     );
   }
 }
