@@ -1,19 +1,14 @@
+import 'package:circuit_electricial_box/domain/entity/book.dart';
 import 'package:flutter/material.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
 
 class BookItem extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String description;
-  final double progress; // 0.0 to 1.0
+  final BookItemModel item;
   final VoidCallback? onTap;
 
   const BookItem({
     super.key,
-    required this.imageUrl,
-    required this.title,
-    required this.description,
-    required this.progress,
+    required this.item,
     this.onTap,
   });
 
@@ -60,7 +55,7 @@ class BookItem extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.network(
-                        imageUrl,
+                        item.imageUrl,
                         width: 90,
                         height: 100,
                         fit: BoxFit.cover,
@@ -85,7 +80,7 @@ class BookItem extends StatelessWidget {
                         children: [
                           // Title
                           Text(
-                            title,
+                            item.title,
                             style: textTheme.titleMedium?.copyWith(
                               color: colorScheme.onSurface,
                             ),
@@ -96,7 +91,7 @@ class BookItem extends StatelessWidget {
 
                           // Description
                           Text(
-                            description,
+                            item.description,
                             style: textTheme.bodyMedium?.copyWith(
                               color: colorScheme.onSurfaceVariant,
                             ),
@@ -112,7 +107,7 @@ class BookItem extends StatelessWidget {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(4),
                                   child: LinearProgressIndicator(
-                                    value: progress,
+                                    value: item.progress,
                                     backgroundColor:
                                         colorScheme.secondaryContainer,
                                     valueColor: AlwaysStoppedAnimation<Color>(
@@ -123,7 +118,7 @@ class BookItem extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(width: 8),
-                              Text("${(progress * 100).ceil()}%")
+                              Text("${(item.progress * 100).ceil()}%")
                             ],
                           ),
                         ],
@@ -134,6 +129,30 @@ class BookItem extends StatelessWidget {
               ],
             )),
       ),
+    );
+  }
+}
+
+class BookItemModel {
+  final String title;
+  final String description;
+  final double progress;
+  final String imageUrl;
+
+  BookItemModel({
+    required this.title,
+    required this.description,
+    required this.progress,
+    required this.imageUrl,
+  });
+
+  // Factory for mapping from entity
+  factory BookItemModel.fromEntity(BookEntity entity) {
+    return BookItemModel(
+      title: entity.title,
+      description: entity.description,
+      progress: entity.progress,
+      imageUrl: entity.imageUrl,
     );
   }
 }

@@ -69,5 +69,8 @@
   "viewMore":"  …View more",
   "home":"Home",
   "collection":"Collection",
-  "settings":"Settings"
+  "settings":"Settings",
+  "search":"Search",
+  "noItemsFound":"No items found",
+  
 }
