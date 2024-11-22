@@ -120,7 +120,7 @@ class _SearchScreenBodyState extends State<SearchScreenBody> {
         child: Row(
           children: <Widget>[
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Icon(MingCuteIcons.mgc_search_2_line),
             ),
             Expanded(

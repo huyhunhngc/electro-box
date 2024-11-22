@@ -35,8 +35,8 @@ class BookItem extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                  top: -16,
-                  right: -12,
+                  top: 0,
+                  right: 0,
                   child: IconButton(
                     icon: Icon(
                       MingCuteIcons
@@ -54,24 +54,29 @@ class BookItem extends StatelessWidget {
                     // Image
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        item.imageUrl,
+                      child: Image.asset(
+                        item.imageUrl, // Path to your asset image
                         width: 90,
                         height: 100,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitHeight,
                         errorBuilder: (context, error, stackTrace) {
                           return Container(
                             width: 90,
                             height: 100,
-                            color: colorScheme.secondaryContainer,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .secondaryContainer,
                             child: Icon(
                               Icons.image_not_supported,
-                              color: colorScheme.onSurfaceVariant,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurfaceVariant,
                             ),
                           );
                         },
                       ),
                     ),
+
                     const SizedBox(width: 16),
                     // Content
                     Expanded(

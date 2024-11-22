@@ -35,7 +35,7 @@ class _CollectionScreenBodyState extends State<CollectionScreenBody> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -56,7 +56,7 @@ class _CollectionScreenBodyState extends State<CollectionScreenBody> {
                   child: Row(
                     children: <Widget>[
                       const Icon(MingCuteIcons.mgc_search_2_line),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 16),
                       Text(
                         "Search",
                         style: TextStyle(
@@ -83,7 +83,7 @@ class _CollectionScreenBodyState extends State<CollectionScreenBody> {
                         bottom: 8.0), // Add space between items
                     child: BookItem(
                       item: BookItemModel(
-                        imageUrl: 'https://example.com/book-cover.jpg',
+                        imageUrl: 'assets/circuit/as.png',
                         title: 'The Great Book Title',
                         description: 'This is a brief description',
                         progress: 0.75, // 75% complete
